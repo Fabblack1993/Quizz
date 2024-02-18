@@ -478,4 +478,16 @@ body{
     .main{
         min-height: 40vh;
     }
+    .header{
+        position: fixed;
+        top: 0;
+        left: 7px;
+        width: 100%;
+        padding: 10px 10%;
+        background: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
 }
