@@ -21,19 +21,19 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/about.html'));
+    res.sendFile(path.join(__dirname, '/public/apropos.html'));
 });
 
 app.get('/services', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/services.html'));
+    res.sendFile(path.join(__dirname, '/public/services.html'));
 });
 
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/contact.html'));
+    res.sendFile(path.join(__dirname, '/public/contact.html'));
 });
 
 app.get('/quiz', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/quiz.html'));
+    res.sendFile(path.join(__dirname, '/public/quiz.html'));
 });
 
 // Route POST pour traiter les messages du formulaire de contact
