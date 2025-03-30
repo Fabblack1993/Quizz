@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000; // Utilisation d'un port dynamique
 
 // Middleware pour servir les fichiers statiques (CSS, images)
 app.use(express.static(path.join(__dirname, 'public')));
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // Route pour la page À propos
-app.get('/apropos', (req, res) => {
+app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'apropos.html'));
 });
 
