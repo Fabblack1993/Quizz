@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 // Middleware pour servir les fichiers statiques (CSS, images)
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, './public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
