@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // Route pour la page À propos
-app.get('/about', (req, res) => {
+app.get('/apropos', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'apropos.html'));
 });
 
