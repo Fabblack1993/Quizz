@@ -12,28 +12,28 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Route pour la page d'accueil
+// CONFIGURATION POUR LE DOSSIER PUBLIC
+
+
+// ROUTE PRINCIPALE POUR SERVIR LES PAGES HTML
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-// Route pour la page À propos
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+    res.sendFile(path.join(__dirname, 'public/about.html'));
 });
 
-// Route pour la page Services
 app.get('/services', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'services.html'));
+    res.sendFile(path.join(__dirname, 'public/services.html'));
 });
 
-// Route pour la page Contact
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+    res.sendFile(path.join(__dirname, 'public/contact.html'));
 });
 
-// Route pour la page Quiz
 app.get('/quiz', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'quiz.html'));
+    res.sendFile(path.join(__dirname, 'public/quiz.html'));
 });
 
 // Route POST pour traiter les messages du formulaire de contact
