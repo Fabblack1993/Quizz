@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // Route pour la page À propos
-app.get('/about', (req, res) => {
+app.get('/apropos', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'apropos.html'));
 });
 
@@ -31,9 +31,6 @@ app.get('/contact', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'contact.html'));
 });
 
-// Route pour la page Quiz
-
-
 // Route POST pour traiter les messages du formulaire de contact
 app.post('/send-message', (req, res) => {
     const { name, email, message } = req.body;
@@ -43,7 +40,7 @@ app.post('/send-message', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'ndougafabienne77@gmail.com', // Remplace par ton email
-            pass: 'iofn hvve wolj ybht  '     // Remplace par ton mot de passe ou App Password
+            pass: 'iofn hvve wolj ybht'        // Remplace par ton App Password Google
         }
     });
 
@@ -56,7 +53,7 @@ app.post('/send-message', (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.error(error);
+            console.error('Erreur lors de l\'envoi de l\'email :', error);
             res.status(500).send('Erreur lors de l\'envoi du message.');
         } else {
             console.log('Email envoyé : ' + info.response);
