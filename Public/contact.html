@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact - Kmer Quiz</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Kmer Quiz</a>
+        <nav class="navbar">
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html">À propos</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="content">
+            <h1>Contactez-nous</h1>
+            <p>Envie de poser une question, de partager une idée ou de nous envoyer un message ? Remplissez simplement le formulaire ci-dessous !</p>
+            <form action="http://localhost:3000/send-message" method="POST">
+                <input type="text" name="name" placeholder="Votre nom" required>
+                <input type="email" name="email" placeholder="Votre email" required>
+                <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </form>
+            
+
+            <div class="contact-info">
+               
+                <p><strong>Email :</strong> <a href="mailto:ndougafabienne77@gmail.com">ndougafabienne77@gmail.com</a></p>
+                <p><strong>Téléphone :</strong> <a href="tel:+237659098077">+237 654 09 80 77</a></p>
+                <p><strong>Adresse :</strong> Yaoundé, Cameroun</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Kmer Quiz. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
