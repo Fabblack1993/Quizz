@@ -4,31 +4,31 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Utilisation d'un port dynamique
+const PORT = process.env.PORT || 3000; // Port dynamique pour Render
 
-// Middleware pour servir les fichiers statiques (CSS, images)
+// Middleware pour servir les fichiers statiques
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Route pour la page d'accueil
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html')); // Utilisation de path.resolve pour éviter les erreurs de chemin
 });
 
 // Route pour la page À propos
 app.get('/apropos', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'apropos.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'apropos.html'));
 });
 
 // Route pour la page Services
 app.get('/services', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'services.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'services.html'));
 });
 
 // Route pour la page Contact
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'contact.html'));
 });
 
 // Route POST pour traiter les messages du formulaire de contact
@@ -39,14 +39,14 @@ app.post('/send-message', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'ndougafabienne77@gmail.com', // Remplace par ton email
-            pass: 'iofn hvve wolj ybht'        // Remplace par ton App Password Google
+            user: 'ndougafabienne77@gmail.com',
+            pass: 'iofn hvve wolj ybht' // App Password Google
         }
     });
 
     const mailOptions = {
         from: email,
-        to: 'ndougafabienne77@gmail.com', // Ton adresse pour recevoir le message
+        to: 'ndougafabienne77@gmail.com',
         subject: `Nouveau message de ${name}`,
         text: `Nom : ${name}\nEmail : ${email}\nMessage : ${message}`
     };
@@ -66,3 +66,4 @@ app.post('/send-message', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Serveur lancé sur http://localhost:${PORT}`);
 });
+
